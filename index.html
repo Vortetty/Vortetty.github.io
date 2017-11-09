@@ -1,8 +1,17 @@
 <h1>welcome to my site</h1>
 <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/loadingio/loading-bar/master/dist/loading-bar.css"/>
 <script type="text/javascript" src="https://raw.githubusercontent.com/loadingio/loading-bar/master/dist/loading-bar.js"><script>
-<div id="load" class="ldBar" data-type="fill" data-fill-dir="btt" data-img="load.svg"></div>
+<div id="load" class="ldBar" data-type="fill" data-fill-dir="btt" data-img="load.svg" data-value="0"></div>
 <script>
+  var x = 0
   var bar1 = document.getElementById('load').ldBar;
-  for 
+  def load(){
+    x=0
+    
+      while (x!=100){
+        sleep(500);
+        x++
+        document.getElementById("load").style.data-value = x;
+      }
+  }
 </script>
