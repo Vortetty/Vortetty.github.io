@@ -6,7 +6,7 @@
   <animate attributeName="fill" values="#0dceff;#577c9b;#577c9b" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.25s" calcMode="discrete"></animate>
 </rect><rect x="17" y="40" width="20" height="20" fill="#577c9b">
   <animate attributeName="fill" values="#0dceff;#577c9b;#577c9b" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.875s" calcMode="discrete"></animate>
-</rect><rect x="63" y="40" width="20" height="20" fill="#577c9f">
+</rect><rect x="63" y="40" width="20" height="20" fill="#577c9b">
   <animate attributeName="fill" values="#0dceff;#577c9b;#577c9b" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.375s" calcMode="discrete"></animate>
 </rect><rect x="17" y="63" width="20" height="20" fill="#577c9b">
   <animate attributeName="fill" values="#0dceff;#577c9b;#577c9b" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.75s" calcMode="discrete"></animate>
