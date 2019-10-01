@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <style>
 p {
@@ -267,3 +267,172 @@ ul li:nth-child(n+2) {
             </ul>
         </div>
     </div>
+-->
+
+<style>body {
+  font-family:Lucida Console;
+  font-weight: bold;
+  font-size:16px;
+  color:#ccc;
+  background:#444;
+  outline: none;
+}
+
+#numbergoeshere, button {
+  position:relative;
+  z-index:1;
+  font-family:Lucida Console;
+  font-weight: bold;
+  font-size:16px;
+  color:#ccc;
+  border-style: solid;
+  border-color:#777;
+  border-width:3px;
+  background:#666;
+  border-radius:5000px;
+  text-align: center;
+  outline: none;
+}
+
+#UwU-box {
+  position:absolute;
+  z-index:0;
+  font-family:Lucida Console;
+  font-weight: bold;
+  font-size:16px;
+  color:#ccc;
+  overflow:wrap;
+}
+
+#UwU-box.up {
+  bottom:100%;
+  animation: up 1s ease-in-out;
+}
+
+#UwU-box.down {
+  top:37.5px;
+  animation: down 1s ease-in-out;
+}
+
+@keyframes up {
+  from {top:37.5px;}
+  to {bottom:100%;}
+}
+
+@keyframes down {
+  from {bottom:100%;}
+  to {top:37.5px;}
+}</style>
+
+<script>var _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16;
+
+// _______________
+// | 1  2  3  4  |
+// | 5  6  7  8  |
+// | 9  10 11 12 |
+// | 13 14 15 16 |
+// ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+function define() {
+  _1 = [["l", 2, 1], ["u", 5, 1]];
+  _2 = [["l", 3, 2], ["u", 6, 2], ["r", 1, 2]];
+  _3 = [["l", 4, 3], ["u", 7, 3], ["r", 2, 3]];
+  _4 = [["u", 8, 4], ["r", 3, 4]];
+  _5 = [["l", 6, 5], ["u", 9, 5], ["d", 1, 5]];
+  _6 = [["l", 7, 6], ["u", 10, 6], ["r", 5, 6], ["d", 2, 6]];
+  _7 = [["l", 8], ["u", 11], ["r", 6], ["d", 3]];
+  _8 = [["u", 12], ["r", 7], ["d", 4]];
+  _9 = [["l", 10], ["u", 13], ["d", 5]];
+  _10 = [["l", 11], ["u", 14], ["r", 9], ["d", 6]];
+  _11 = [["l", 12], ["u", 15], ["r", 10], ["d", 7]];
+  _12 = [["u", 16], ["r", 11], ["d", 8]];
+  _13 = [["l", 14], ["d", 9]];
+  _14 = [["l", 15], ["r", 13], ["d", 10]];
+  _15 = [["l", 16], ["r", 14], ["d", 11]];
+  _16 = [["r", 15], ["d", 12]];
+  var dundefined, uwu, thing, length;
+  var uwubox = document.getElementById("UwU-box");
+}
+
+define();
+
+var square = _16;
+
+//decoder
+function decode(num) {
+  if (num == 1) {
+    square = _1;
+  } else if (num == 2) {
+    square = _2;
+  } else if (num == 3) {
+    square = _3;
+  } else if (num == 4) {
+    square = _4;
+  } else if (num == 5) {
+    square = _5;
+  } else if (num == 6) {
+    square = _6;
+  } else if (num == 7) {
+    square = _7;
+  } else if (num == 8) {
+    square = _8;
+  } else if (num == 9) {
+    square = _9;
+  } else if (num == 10) {
+    square = _10;
+  } else if (num == 11) {
+    square = _11;
+  } else if (num == 12) {
+    square = _12;
+  } else if (num == 13) {
+    square = _13;
+  } else if (num == 14) {
+    square = _14;
+  } else if (num == 15) {
+    square = _15;
+  } else if (num == 16) {
+    square = _16;
+  }
+}
+
+var square = _16;
+
+// engine
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if (new Date().getTime() - start > milliseconds) {
+      break;
+    }
+  }
+}
+
+function toggle() {
+  document.getElementById("UwU-box").classList.toggle("up");
+  document.getElementById("UwU-box").classList.toggle("down");
+}
+
+function scramble() {
+  toggle();
+  setTimeout(function() {
+    uwu = 1;
+    uwu = document.getElementById("numbergoeshere").value;
+    document.getElementById("numbergoeshere").disabled = true;
+    document.getElementById("UwU-box").innerHTML = "";
+
+    for (i = 1; i <= uwu; i++) {
+      thing = square[Math.floor(Math.random() * square.length)];
+      decode(thing[1]);
+      //square = thing[1]; replaced by decode as this method causes problems
+      document.getElementById("UwU-box").innerHTML +=
+        thing[0].toUpperCase() + " ";
+      console.log(square[3]);
+    }
+    document.getElementById("numbergoeshere").disabled = false;
+    toggle();
+  }, 1500);
+}
+</script>
+
+<button onclick="scramble()" id="scramble">Scramble</button>
+<input id="numbergoeshere">
+<div id="UwU-box" class="down"></div>
