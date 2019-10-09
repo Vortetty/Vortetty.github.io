@@ -1,0 +1,154 @@
+<script>
+  $( "#profilehover, #profilepic, #swap" ).mouseover(function() {
+  $( "#swap" ).css("top","54px");
+  $( "#swap" ).css("transform","rotate(360deg)")
+  $( "#swap" ).css("visibility","visible");
+  $( "#profilehover" ).css("height","90px");
+});
+
+$( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
+  $( "#swap" ).css("top","4px");
+  $( "#swap" ).css("transform","rotate(0deg)")
+  $( "#swap" ).css("visibility","hidden");
+  $( "#profilehover" ).css("height","40px");
+});
+</script>
+
+<style>
+  body {
+  color: #555;
+  background-color: #777;
+}
+#title {
+  position: sticky;
+  top: 7.5px;
+  left: 0px;
+  display: inline-block;
+  border-width: 0px;
+  padding: 0px;
+  background-color: #3d3d3d;
+  text-align: left;
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 25px;
+  vertical-align: middle;
+}
+#profilepic {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  top: 4px;
+  right: 5px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+  z-index:1;
+}
+#titletext {
+  position: relative;
+  top: 9px;
+  left: 10px;
+  vertical-align: middle;
+  color: #303030;
+  background-color: #3d3d3d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #222, 2px 2px 1px #464646;
+}
+#profiletext {
+  position: relative;
+  top: 11px;
+  left: 53%;
+  vertical-align: middle;
+  font-size: 15px;
+  color: #303030;
+  background-color: #3d3d3d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #222, 2px 2px 1px #464646;
+}
+
+#swap {
+  position: absolute;
+  display: inline-block;
+  filter: invert(0.235);
+  height: 40px;
+  top: 4px;
+  right: 5px;
+  border-radius: 50px;
+  visibility:hidden;
+  transition: all 0.5s ease-in-out;
+  z-index:0;
+}
+#profilehover {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  top: 4px;
+  right: 5px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+  z-index:-1;
+}
+
+#content {
+  position:relative;
+  top:5px;
+  background-color:#5d5d5d;
+  width:500px;
+  height:500px;
+  border-radius:50px;
+  margin: 0 auto;
+  z-index:-10;
+  text-align:center;
+}
+#abouttext {
+  width:250px;
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+  left: 130px;
+  vertical-align: middle;
+  text-align:center;
+  color: #505050;
+  background-color: #5d5d5d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+}
+
+#text {
+  top: 10px;
+  vertical-align: middle;
+  color: #505050;
+  background-color: #5d5d5d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+}
+
+hr {
+  color:#fff;
+  background-color:#fff;
+}
+</style>
+
+<div id="title">
+  <span id="titletext">Βασιλικός σαρωτής αγάπης</span>
+  <span id="profiletext">Εχετε συνδεθεί ως: Οδυσσέας</span>
+  <img src="https://github.com/Vortetty/Vortetty.github.io/raw/master/images/output-onlinepngtools.png" id="profilepic">
+  <div id="profilehover"></div>
+  <img id=swap src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg" onclick="window.location.href = 'https://codepen.io/vortetty/pen/rNNVNWQ'">
+</div>
+<br>
+
+<div id="content">
+  <p id="abouttext">Σχετικά με μένα:</p>
+  <ul id="text">
+    <li>μου αρέσει: καταστρέφοντας τις εχθρικές πόλεις</li>
+    <li>Καλύτερο απόσπασμα:  Το μεγαλύτερο απόσπασμά μου: "Εξακολουθούσε να επιθυμεί την επιστροφή του στο σπίτι και τη σύζυγό του" (Όμηρος, Βιβλίο 1, γραμμή 12)
+</li>
+    <li>Πλεονεκτήματα: ισχυρή, προστατευτική, πιστή.
+</li>
+    <li>Μειονεκτήματα: απορροφάται από τον εαυτό μου, έχει ptsd, φύλλα για μεγάλες περιόδους.
+</li>
+  </ul>
+</div>
