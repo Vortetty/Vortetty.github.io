@@ -92,6 +92,45 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   transition: all 0.5s ease-in-out;
   z-index:-1;
 }
+
+#content {
+  position:relative;
+  top:5px;
+  background-color:#5d5d5d;
+  width:500px;
+  height:500px;
+  border-radius:50px;
+  margin: 0 auto;
+  z-index:-10;
+  text-align:center;
+}
+#abouttext {
+  width:250px;
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+  left: 130px;
+  vertical-align: middle;
+  text-align:center;
+  color: #505050;
+  background-color: #5d5d5d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+}
+
+#text {
+  top: 10px;
+  vertical-align: middle;
+  color: #505050;
+  background-color: #5d5d5d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+}
+
+hr {
+  color:#fff;
+  background-color:#fff;
+}
 </style>
 
 <div id="title">
@@ -99,10 +138,17 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   <span id="profiletext">You are logged in as: Odysseus</span>
   <img src="https://github.com/Vortetty/Vortetty.github.io/raw/master/images/output-onlinepngtools.png" id="profilepic">
   <div id="profilehover"></div>
-  <img id=swap src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg">
+  <img id=swap src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg" onclick="window.location.href = 'https://vortetty.github.io/odysseus/index.html'">
 </div>
 <br>
 
 <div id="content">
-  
+  <p id="abouttext">About me:</p>
+  <ul id="text">
+    <li>I like: destroying enemy cities</li>
+    <li>My greatest quote: ‘He alone was still yearning for his return to home and wife’ (Homer book 1, line 12)</li>
+    <li>Advantages: strong, protective, faithful.</li>
+    <li>Disadvantages: absorbed by myself, have ptsd, leaves for long periods.
+</li>
+  </ul>
 </div>
