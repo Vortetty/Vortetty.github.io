@@ -1,23 +1,56 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
-  $( "#profilehover, #profilepic, #swap" ).mouseover(function() {
-  $( "#swap" ).css("top","54px");
-  $( "#swap" ).css("transform","rotate(360deg)")
-  $( "#swap" ).css("visibility","visible");
-  $( "#profilehover" ).css("height","90px");
+// toggle lang
+$("#swap, #swapeng").click(function() {
+  $("#grk").toggle();
+  $("#eng").toggle();
+
+  //reset the rotator
+  $("#swap").css("top", "4px");
+  $("#swap").css("transform", "rotate(0deg)");
+  $("#swap").css("visibility", "hidden");
+  $("#profilehover").css("height", "40px");
+
+  $("#swapeng").css("top", "4px");
+  $("#swapeng").css("transform", "rotate(0deg)");
+  $("#swapeng").css("visibility", "hidden");
+  $("#profilehovereng").css("height", "40px");
 });
 
-$( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
-  $( "#swap" ).css("top","4px");
-  $( "#swap" ).css("transform","rotate(0deg)")
-  $( "#swap" ).css("visibility","hidden");
-  $( "#profilehover" ).css("height","40px");
+// turn off english lang
+$(document).ready(function() {
+  $("#eng").toggle(0);
+});
+
+// animation
+$("#profilehover, #profilepic, #swap, #profilehovereng, #profilepiceng, #swapeng").mouseover(function() {
+  $("#swap").css("top", "54px");
+  $("#swap").css("transform", "rotate(360deg)");
+  $("#swap").css("visibility", "visible");
+  $("#profilehover").css("height", "90px");
+  
+  $("#swapeng").css("top", "54px");
+  $("#swapeng").css("transform", "rotate(360deg)");
+  $("#swapeng").css("visibility", "visible");
+  $("#profilehovereng").css("height", "90px");
+});
+
+$("#profilehover, #profilepic, #swap, #profilehovereng, #profilepiceng, #swapeng").mouseleave(function() {
+  $("#swap").css("top", "4px");
+  $("#swap").css("transform", "rotate(0deg)");
+  $("#swap").css("visibility", "hidden");
+  $("#profilehover").css("height", "40px");
+  
+  $("#swapeng").css("top", "4px");
+  $("#swapeng").css("transform", "rotate(0deg)");
+  $("#swapeng").css("visibility", "hidden");
+  $("#profilehovereng").css("height", "40px");
 });
 </script>
 
 <style>
- body {
+body {
   color: #555;
   background-color: #777;
 }
@@ -36,7 +69,8 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   font-size: 25px;
   vertical-align: middle;
 }
-#profilepic {
+#profilepic,
+#profilepiceng {
   position: absolute;
   display: inline-block;
   height: 40px;
@@ -45,7 +79,7 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   right: 5px;
   border-radius: 50px;
   transition: all 0.5s ease-in-out;
-  z-index:1;
+  z-index: 1;
 }
 #titletext {
   position: relative;
@@ -60,7 +94,18 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
 #profiletext {
   position: relative;
   top: 11px;
-  left: 53%;
+  left: 52vw;
+  vertical-align: middle;
+  font-size: 15px;
+  color: #303030;
+  background-color: #3d3d3d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #222, 2px 2px 1px #464646;
+}
+#profiletexteng {
+  position: relative;
+  top: 11px;
+  left: 50vw;
   vertical-align: middle;
   font-size: 15px;
   color: #303030;
@@ -69,7 +114,8 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   text-shadow: -1px -1px 1px #222, 2px 2px 1px #464646;
 }
 
-#swap {
+#swap,
+#swapeng {
   position: absolute;
   display: inline-block;
   filter: invert(0.235);
@@ -77,11 +123,11 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   top: 4px;
   right: 5px;
   border-radius: 50px;
-  visibility:hidden;
+  visibility: hidden;
   transition: all 0.5s ease-in-out;
-  z-index:0;
+  z-index: 0;
 }
-#profilehover {
+#profilehover, #profilehovereng {
   position: absolute;
   display: inline-block;
   height: 40px;
@@ -90,32 +136,33 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   right: 5px;
   border-radius: 50px;
   transition: all 0.5s ease-in-out;
-  z-index:-1;
+  z-index: -1;
 }
 
 #content {
-  position:relative;
-  top:5px;
-  background-color:#5d5d5d;
-  width:500px;
-  height:500px;
-  border-radius:50px;
+  position: relative;
+  top: 5px;
+  background-color: #5d5d5d;
+  max-width: 500px;
+  height:250px;
+  border-radius: 50px;
   margin: 0 auto;
-  z-index:-10;
-  text-align:center;
+  z-index: -10;
+  text-align: center;
+  margin-bottom: 5px;
 }
 #abouttext {
-  width:250px;
+  width: 250px;
   font-size: 25px;
   position: relative;
   top: 10px;
   left: 130px;
   vertical-align: middle;
-  text-align:center;
+  text-align: center;
   color: #505050;
   background-color: #5d5d5d;
   letter-spacing: 0.1em;
-  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+  text-shadow: -1px -1px 1px #444, 2px 2px 1px #666666;
 }
 
 #text {
@@ -124,21 +171,21 @@ $( "#profilehover, #profilepic, #swap" ).mouseleave(function() {
   color: #505050;
   background-color: #5d5d5d;
   letter-spacing: 0.1em;
-  text-shadow: -1px -1px 1px #444, 2px 2px   1px #666666;
+  text-shadow: -1px -1px 1px #444, 2px 2px 1px #666666;
 }
 
 hr {
-  color:#fff;
-  background-color:#fff;
+  color: #fff;
+  background-color: #fff;
 }
 </style>
 
-<div id="title">
+<span id="grk"><div id="title">
   <span id="titletext">Βασιλικός σαρωτής αγάπης</span>
-  <span id="profiletext">Εχετε συνδεθεί ως: Οδυσσέας</span>
-  <img src="https://github.com/Vortetty/Vortetty.github.io/raw/master/images/output-onlinepngtools.png" id="profilepic">
-  <div id="profilehover"></div>
-  <img id=swap src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg" onclick="window.location.href = 'https://vortetty.github.io/odysseus/english.html'">
+<span id="profiletext">Εχετε συνδεθεί ως: Οδυσσέας</span>
+<img src="https://github.com/Vortetty/Vortetty.github.io/raw/master/images/output-onlinepngtools.png" id="profilepic">
+<div id="profilehover"></div>
+<img id=swap src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg">
 </div>
 <br>
 
@@ -146,11 +193,34 @@ hr {
   <p id="abouttext">Σχετικά με μένα:</p>
   <ul id="text">
     <li>μου αρέσει: καταστρέφοντας τις εχθρικές πόλεις</li>
-    <li>Καλύτερο απόσπασμα:  Το μεγαλύτερο απόσπασμά μου: "Εξακολουθούσε να επιθυμεί την επιστροφή του στο σπίτι και τη σύζυγό του" (Όμηρος, Βιβλίο 1, γραμμή 12)
-</li>
+    <li>Καλύτερο απόσπασμα: Το μεγαλύτερο απόσπασμά μου: "Εξακολουθούσε να επιθυμεί την επιστροφή του στο σπίτι και τη σύζυγό του" (Όμηρος, Βιβλίο 1, γραμμή 12)
+    </li>
     <li>Πλεονεκτήματα: ισχυρή, προστατευτική, πιστή.
-</li>
+    </li>
     <li>Μειονεκτήματα: απορροφάται από τον εαυτό μου, έχει ptsd, φύλλα για μεγάλες περιόδους.
-</li>
+    </li>
   </ul>
 </div>
+</span>
+
+<span id="eng">
+<div id="title">
+  <span id="titletext">Royal love scanner:  Profile</span>
+<span id="profiletexteng">You are logged in as: Odysseus</span>
+<img src="https://github.com/Vortetty/Vortetty.github.io/raw/master/images/output-onlinepngtools.png" id="profilepiceng">
+<div id="profilehovereng"></div>
+<img id="swapeng" src="https://icon-library.net/images/swap-icon-png/swap-icon-png-0.jpg">
+</div>
+<br>
+
+<div id="content">
+  <p id="abouttext">About me:</p>
+  <ul id="text">
+    <li>I like: destroying enemy cities</li>
+    <li>My greatest quote: ‘He alone was still yearning for his return to home and wife’ (Homer book 1, line 12)</li>
+    <li>Advantages: strong, protective, faithful.</li>
+    <li>Disadvantages: absorbed by myself, have ptsd, leaves for long periods.
+    </li>
+  </ul>
+</div>
+</span>
