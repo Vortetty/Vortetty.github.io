@@ -120,6 +120,15 @@ text {
   height:100vh;
 }
 
+.w67 wave {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land67.png");
+	filter: url("#turbulence");
+  width:100vw;
+  height:100vh;
+}
+
 
 .w1 {
   background-image: url('https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land1.jpg'); 
@@ -161,6 +170,14 @@ text {
 
 .w4 {
   background-image: url('https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/water4.jpg'); background-size: cover;position: absolute;
+  width:100vw;
+  height:100vh;
+}
+
+.w67 {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land67.jpg");
   width:100vw;
   height:100vh;
 }
