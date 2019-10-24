@@ -32,7 +32,7 @@ document.onkeydown = function(e) {
 var rand, water;
 
 function randClass() {
-  var w = ["w1","w2","w3","w4","w5","w6"];
+  var w = ["w1","w2","w3","w4","w5","w6","w67"];
   while(typeof document.getElementsByClassName("water") !== undefined) {
   water = document.getElementsByClassName("water");
   for(var j=0, l=water.length; j<=l; j+=1) {
