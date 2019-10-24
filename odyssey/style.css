@@ -129,6 +129,33 @@ text {
   height:100vh;
 }
 
+.w68 wave {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land68.png");
+	filter: url("#turbulence");
+  width:100vw;
+  height:100vh;
+}
+
+.w69 wave {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land69.png");
+	filter: url("#turbulence");
+  width:100vw;
+  height:100vh;
+}
+
+.shrine wave {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/shrine.png");
+	filter: url("#turbulence");
+  width:100vw;
+  height:100vh;
+}
+
 
 .w1 {
   background-image: url('https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land1.jpg'); 
@@ -178,6 +205,30 @@ text {
   background-size: cover;
   position: absolute;
   background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land67.jpg");
+  width:100vw;
+  height:100vh;
+}
+
+.w68 {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land68.jpg");
+  width:100vw;
+  height:100vh;
+}
+
+.w69 {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/land69.jpg");
+  width:100vw;
+  height:100vh;
+}
+
+.shrine {
+  background-size: cover;
+  position: absolute;
+  background-image: url("https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/images/shrine.jpg");
   width:100vw;
   height:100vh;
 }
