@@ -4,7 +4,7 @@
   transition: all 0.5s ease;
   font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
-  transform: translateZ(0);
+  transform: translateZ(0) perspective(1px);
   backface-visibility: hidden;
   
   /* hide scrollbars */
