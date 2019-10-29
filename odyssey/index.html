@@ -395,11 +395,13 @@
         </div>
         <!-- partial -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
-        <text id="absolute" class="w3-display-bottommiddle" style="padding:10px; transition: all 0.5s ease;">
+        <text id="absolute" class="w3-display-bottommiddle" style="z-index: 10000 !important; padding:10px; transition: all 0.5s ease;">
             Page: 
             <pagecounter id="page">1</pagecounter>
             /27
         </text>
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
         <svg>
             <filter id="turbulence" x="0" y="0" width="100%" height="100%">
                 <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
@@ -407,7 +409,5 @@
                 <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="120s" keyTimes="0;1" values="0.04 0.12;0.08 0.16" repeatCount="indefinite"/>
             </filter>
         </svg>
-        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;  </button>
-        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">  &#10095;</button>
     </body>
 </html>
