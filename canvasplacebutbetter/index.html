@@ -1,0 +1,989 @@
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>canvas.place</title>
+    <link rel="apple-touch-icon" href="https://canvas.place/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://canvas.place/img/favicon-16x16.png?n=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://canvas.place/img/favicon-32x32.png?n=1">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://canvas.place/img/favicon-96x96.png?n=1">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="https://canvas.place/img/favicon.ico?n=1">
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://canvas.place/img/favicon.ico?n=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta property="og:title" content="canvas.place">
+    <meta property="og:url" content="https://canvas.place">
+    <meta property="og:image" content="/img/apple-touch-icon.png">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="canvas.place">
+    <meta property="twitter:image" content="/img/apple-touch-icon.png">
+    <meta property="og:description" content="Work together to create something amazing. Join thousands of other users and see what happens when you share one huge canvas.">
+    <meta property="twitter:description" content="Work together to create something amazing. Join thousands of other users and see what happens when you share one huge canvas.">
+    <meta name="csrf-token" content="podkLGDK-Yef1BQrnwmhc5FhWZb1b6b607yc">
+    <meta name="place-site-name" content="canvas.place">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://canvas.place/css/global.css?v=10" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css?v=10" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.css?v=10" rel="stylesheet">
+    <link href="https://canvas.place/css/place.css?v=10" rel="stylesheet">
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="fixed-navbar signed-in" data-user-is-mod="false" data-user-is-admin="false" data-user-id="5dbce0c195876a360736ecbe">
+    <div class="dialog-ctn">
+        <div class="dialog-overlay"></div>
+        <div class="dialog dialog-md" id="donate-dialog">
+            <div class="close">×</div>
+            <div class="pages">
+                <div class="active" tab-name="What's new">
+                    <div class="heading no-margin"><span class="site">canvas.place</span>
+                        <h1>Donate to canvas.place</h1>
+                        <p class="subhead">Hosting canvas.place is pretty costly for us, so any donation helps us ensure that canvas.place stays up and running.</p>
+                    </div>
+                    <div class="content">
+                        <h4>Donate to canvas.place and receive perks</h4>
+                        <p>While every donation is appreciated, <strong>users who donate 5.00 USD (American Dollars) or more</strong> will receive the following perks:</p>
+                        <ul>
+                            <li>The ability to place any colour you want</li>
+                            <li>A special donor badge for your profile</li>
+                        </ul>
+                        <p>If this sounds good to you, you can donate using PayPal by clicking the button below:</p><a class="btn btn-lg btn-success" href="https://www.paypal.me/dynastic"><i class="fa fa-money fa-fw"></i> Donate using PayPal</a>
+                        <br>
+                        <br>
+                        <p>Once you've donated (or if you already have), <strong>go fill out <a href="/donor-apply">this form</a> with the details of your transaction, and you will receive your donor privileges</strong> once we validate your purchase.</p><small class="text-muted">Perks listed may change at any time, most likely to add more. Donations and donors are still subject to the <a href="/tos">Terms of Service</a> initially agreed upon at sign up. Charging back your donation will result in being barred from applying for donor privileges in the future, and a revocation of pixels placed. Upon charge back, we also may ban your account if deemed necessary at our own discretion. Donor refunds are at our own discretion and will not be given 30 days after purchase, and may result in the loss of pixels with custom colours placed, and loss of donor privileges going forward. Purchase validation is usually completed within 24 hours, and should never exceed 7 days, but may take longer than that. If your validation is taking unusually long (over 48 hours), <a href="mailto:place-donor-inquiries@dynastic.co">contact us</a> and we'll help you sort it out.</small></div>
+                </div>
+            </div>
+            <div class="dialog-footer align-end"><a class="btn btn-popping" data-dialog-dismiss="data-dialog-dismiss">Close</a></div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top" id="page-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="https://www.dynastic.co" style="margin-right: -5px"><img src="https://assets.dynastic.co/brand/img/icon-46.png" height="20"></a><a class="navbar-brand" href="/">canvas.place</a></div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active" id="nav-home"><a href="/"><i class="fa fa-fw fa-home"></i><span>Home</span><span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users fa-fw"></i>Community <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="nav-official-subreddit"><a href="https://www.reddit.com/r/place20"><i class="fa fa-fw fa-reddit-alien"></i><span>Official Subreddit</span></a></li>
+                            <li id="nav-chat-on-discord"><a href="https://discord.gg/CgC8FTg"><i class="fa fa-fw fa-comments"></i><span>Chat on Discord</span></a></li>
+                            <li id="nav-timelapses"><a href="https://timelapse.canvas.place"><i class="fa fa-fw fa-clock-o"></i><span>Timelapses</span></a></li>
+                            <li id="nav-merch"><a href="https://merch.canvas.place"><i class="fa fa-fw fa-shopping-cart"></i><span>Merch</span></a></li>
+                            <li id="nav-source-code"><a href="https://www.github.com/dynastic/place"><i class="fa fa-fw fa-github"></i><span>Source Code</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><span name="user-dropdown">vortetty</span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="nav-your-profile"><a href="/account"><i class="fa fa-fw fa-user-circle-o"></i><span>Your Profile</span></a></li>
+                            <li id="nav-whats-new"><a href="javascript:void(0)"><i class="fa fa-fw fa-list"></i><span>What's New</span></a></li>
+                            <li id="nav-rules"><a href="/guidelines"><i class="fa fa-fw fa-handshake-o"></i><span>Rules</span></a></li>
+                            <li class="divider" role="separator"></li>
+                            <li id="nav-sign-out"><a href="/signout?redirectURL="><i class="fa fa-fw fa-sign-out"></i><span>Sign Out</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-help"><a href="javascript:void(0)"><i class="fa fa-fw fa-question-circle"></i><span class="visible-xs-inline">Help</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="floating-alert-ctn"></div>
+        <div id="place">
+            <div id="loading" style="display: none;">
+                <div class="content"><img class="icon" src="https://assets.dynastic.co/brand/img/icon-256.png" height="75"><span class="text">Loading…</span></div>
+            </div>
+            <div class="canvas-container">
+                <div id="pixel-data-ctn" style="display: none;">
+                    <div class="pixel-data">
+                        <div class="summary"><span class="intro">Pixel placed by</span>
+                            <div class="contents">
+                                <div class="user-summary">
+                                    <div class="username-container">
+                                        <div class="username-text-ctn"><a class="username" id="pixel-data-username" href="/@acinonyx">acinonyx</a>
+                                            <div id="user-actions-dropdown-ctn"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-container"><span class="label badge-label label-danger">Ranked #1</span><span class="label badge-label label-warning">Moderator</span></div>
+                                    <time class="timeago" id="pixel-data-time" datetime="2019-04-15T03:03:56.000Z" title="4/14/2019, 8:03:56 PM">7 months ago</time>
+                                </div>
+                                <div class="pixel-coordinates">
+                                    <div class="contents">
+                                        <div class="field"><span class="title">X</span><span class="value" id="pixel-data-x">707</span></div>
+                                        <div class="field"><span class="title">Y</span><span class="value" id="pixel-data-y">1,268</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pixel-colour clearfix">
+                            <div class="left field colour-info"><span class="title">HEX</span><span class="value"><span id="pixel-colour-code">#959595</span>
+                                <div class="colour-preview" id="pixel-colour-preview" style="background-color: rgb(149, 149, 149);"></div>
+                                </span>
+                            </div>
+                            <div class="right"><a class="btn btn-popping btn-arrow" id="pixel-use-colour-btn" data-represented-colour="959595">Use</a></div>
+                        </div>
+                        <div class="user-info">
+                            <div class="field"><span class="title">Total pixels placed</span><span class="value">512,766</span></div>
+                            <div class="field"><span class="title">Pixels this week</span><span class="value">4,943</span></div>
+                            <div class="field"><span class="title">Account created</span><span class="value"><time datetime="2017-04-05T22:10:47.000Z" title="4/5/2017, 3:10:47 PM">3 years ago</time></span></div>
+                            <div class="field"><span class="title">Last placed</span><span class="value"><time datetime="2019-11-01T23:47:40.993Z" title="11/1/2019, 4:47:40 PM">about 3 hours ago</time><div><a href="javascript:void(0)">at (646, 1,817)</a></div></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-ctn">
+                    <div class="popout-btns">
+                        <div class="popout-control control btn btn-default" data-tab-name="chat"><i class="fa fa-comments fa-fw"></i></div>
+                        <div class="popout-control control btn btn-default" data-tab-name="leaderboard"><i class="fa fa-trophy fa-fw"></i></div>
+                        <div class="popout-control control btn btn-default" data-tab-name="achievements"><i class="fa fa-star fa-fw"></i></div>
+                        <div class="popout-control control btn btn-default" data-tab-name="active-users"><i class="fa fa-users fa-fw"></i></div>
+                    </div>
+                    <div class="control-btns">
+                        <div class="control btn btn-success" id="grid-button" title="Show Grid (G)"><i class="fa fa-fw fa-th"></i></div>
+                        <div class="btn-group" role="group" aria-label="Zoom">
+                            <div class="control btn btn-primary" id="zoom-button" title="Zoom In (spacebar)"><i class="fa fa-fw fa-search-plus"></i></div>
+                            <div class="control btn btn-primary" id="zoom-slider-ctn">
+                                <div class="slider slider-horizontal" id="zoomSlider">
+                                    <div class="slider-track">
+                                        <div class="slider-track-low" style="left: 0px; width: 0%;"></div>
+                                        <div class="slider-selection tick-slider-selection" style="left: 0%; width: 73.4985%;"></div>
+                                        <div class="slider-track-high" style="right: 0px; width: 26.5015%;"></div>
+                                    </div>
+                                    <div class="tooltip tooltip-main top hide" role="presentation" style="left: 73.4985%;">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner">18</div>
+                                    </div>
+                                    <div class="tooltip tooltip-min top hide" role="presentation">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner"></div>
+                                    </div>
+                                    <div class="tooltip tooltip-max hide top" role="presentation" style="">
+                                        <div class="tooltip-arrow"></div>
+                                        <div class="tooltip-inner"></div>
+                                    </div>
+                                    <div class="slider-tick-container">
+                                        <div class="slider-tick round in-selection" style="left: 0%;"></div>
+                                        <div class="slider-tick round in-selection" style="left: 46.7762%;"></div>
+                                        <div class="slider-tick round" style="left: 87.6852%;"></div>
+                                        <div class="slider-tick round" style="left: 100%;"></div>
+                                    </div>
+                                    <div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0.2875" aria-valuemax="80" aria-valuenow="18" tabindex="0" style="left: 73.4985%;"></div>
+                                    <div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0.2875" aria-valuemax="80" aria-valuenow="0.2875" tabindex="0" style="left: 0%;"></div>
+                                </div>
+                                <input id="zoom-slider" data-slider-id="zoomSlider" type="text" data-slider-tooltip="hide" data-value="18" value="18" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="colour-picker-popover-ctn"></div>
+                <div id="colour-picker-popover" class="arrow-left" style="left: 20px;">
+                    <style id="popover-styling"></style>
+                    <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left minicolors-inline">
+                        <div id="colour-picker" class="minicolors-input"></div>
+                        <div class="minicolors-panel minicolors-slider-hue">
+                            <div class="minicolors-slider">
+                                <div class="minicolors-picker" style="top: 0.446429px;"></div>
+                            </div>
+                            <div class="minicolors-opacity-slider">
+                                <div class="minicolors-picker"></div>
+                            </div>
+                            <div class="minicolors-grid" style="background-color: rgb(255, 0, 4);">
+                                <div class="minicolors-grid-inner"></div>
+                                <div class="minicolors-picker" style="top: 24px; left: 79px;">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colour-info field"><span class="title">Hex</span>
+                        <input class="value" id="colour-picker-hex-value" value="#D66668" maxlength="7" autocomplete="off" autocorrect="off" autocapitalizae="off" spellcheck="false" tabindex="-1">
+                    </div>
+                </div>
+                <div id="grid" style="transform: translate(-14.5px, -8.125px); background-size: 18px 18px;"></div>
+                <div id="grid-hint" style="width: 18px; height: 18px; left: 669.5px; top: 1719.87px; display: none;"></div>
+                <div id="palette-ctn">
+                    <div class="ctn-row">
+                        <div class="content compact">
+                            <button class="section clickable" id="palette-expando"><i class="fa fa-chevron-up"></i></button>
+                            <div class="section clickable" id="user-count" style=""><i class="fa fa-user fa-fw"></i><span class="count">2</span><i class="fa fa-circle-o-notch fa-spin fa-fw loading" style="display: none;"></i></div>
+                            <button class="section clickable" id="coordinates" style="" data-original-title="" title="" data-clipboard-text="(752, 1314)"><i class="fa fa-map-marker fa-fw"></i>(<span>752</span>, <span>1,314</span>)</button>
+                        </div>
+                    </div>
+                    <div class="ctn-row">
+                        <div class="content" id="palette">
+                            <div id="menu-content-ctn">
+                                <div class="menu-section"><span class="menu-heading">Templates</span>
+                                    <div id="templates-ctn">Coming Soon</div>
+                                </div>
+                                <div class="menu-section"><span class="menu-heading">Warps</span>
+                                    <div id="warps-ctn">
+                                        <div class="menu-section-content-ctn">
+                                            <div class="menu-section-content empty">
+                                                <div class="warp-info add" title="Create a warp at the current position"><span class="warp-title"><i class="fa fa-plus"></i></span></div>
+                                                <div class="warp-info explanation"><span class="warp-title">Warps</span><span class="warp-coordinates">Use warps to get around the canvas quickly. Save a position and warp to it later on.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="palette-content-ctn">
+                                <div class="overlay" id="sign-in-reminder"><span><a id="overlay-sign-in" data-place-trigger="openSignInDialog" href="javascript:void(0)">Sign in</a> or <a id="overlay-sign-up" data-place-trigger="openSignUpDialog" href="javascript:void(0)">sign up</a> to start placing!</span></div>
+                                <div class="overlay" id="placing-modal">Placing…</div>
+                                <div class="overlay" id="place-timer"><span>You may place again in <strong>0:02</strong>. <a href="#" id="notify-me">Notify me</a>.</span></div>
+                                <div class="overlay" id="availability-loading-modal" style="display: none;">Loading…</div>
+                                <div class="colour-option custom" id="customChosenColourOption" data-colour="1" style="display: none;"></div>
+                                <div class="colour-option is-white" data-colour="2" style="background-color: rgb(255, 255, 255);"></div>
+                                <div class="colour-option" data-colour="3" style="background-color: rgb(228, 228, 228);"></div>
+                                <div class="colour-option" data-colour="4" style="background-color: rgb(136, 136, 136);"></div>
+                                <div class="colour-option" data-colour="5" style="background-color: rgb(34, 34, 34);"></div>
+                                <div class="colour-option" data-colour="6" style="background-color: rgb(255, 167, 209);"></div>
+                                <div class="colour-option" data-colour="7" style="background-color: rgb(229, 0, 0);"></div>
+                                <div class="colour-option" data-colour="8" style="background-color: rgb(229, 149, 0);"></div>
+                                <div class="colour-option" data-colour="9" style="background-color: rgb(160, 106, 66);"></div>
+                                <div class="colour-option" data-colour="10" style="background-color: rgb(229, 217, 0);"></div>
+                                <div class="colour-option" data-colour="11" style="background-color: rgb(148, 224, 68);"></div>
+                                <div class="colour-option" data-colour="12" style="background-color: rgb(2, 190, 1);"></div>
+                                <div class="colour-option" data-colour="13" style="background-color: rgb(0, 211, 221);"></div>
+                                <div class="colour-option" data-colour="14" style="background-color: rgb(0, 131, 199);"></div>
+                                <div class="colour-option" data-colour="15" style="background-color: rgb(0, 0, 234);"></div>
+                                <div class="colour-option" data-colour="16" style="background-color: rgb(207, 110, 228);"></div>
+                                <div class="colour-option" data-colour="17" style="background-color: rgb(130, 0, 128);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="place-canvas" height="625" width="781"></canvas>
+                <div id="zoom-controller" style="transform: scale(18);" class="">
+                    <div id="camera-controller" style="height: 2000px; width: 2000px; top: -314.324px; left: 248px;">
+                        <div id="template-images"></div>
+                        <canvas id="place-canvas-draw" height="2000" width="2000"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="popout-container">
+                <div class="navigation-bar"><span class="title"></span>
+                    <div class="buttons"><span class="popout-btn" aria-label="Popout">↗</span><span class="close-btn" aria-label="Close">×</span></div>
+                </div>
+                <div class="content-ctn">
+                    <div class="tab-content active chat" data-tab-name="chat">
+                        <div class="messages" id="chat-messages">
+                            <div class="timestamp">Today, 11:41:31 AM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:41:31 AM">uhh</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(824, 1,184)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@Jackybruder"><span>Jackybruder</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:41:32 AM">this is the real german flag</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(816, 1,183)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@JaWarumDennNicht"><span>JaWarumDennNicht</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:41:38 AM">no</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:41:52 AM">1 sec ima send it</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(813, 1,175)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:42:21 AM">and i am not even 20 to search a job... i do gymnasium and get good job, but you have no job and invest your time to destroy other great works</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(824, 1,184)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@JaWarumDennNicht"><span>JaWarumDennNicht</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:42:28 AM">https://www.google.com/search?q=altdeutsche+flagge&amp;sxsrf=ACYBGNTjszqUkQ_RvA43t5hzEv3cHvf7dQ:1572633722032&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwiy_POS1cnlAhWFY1AKHd7fCFUQ_AUIEigB&amp;biw=1920&amp;bih=969#imgrc=6rOiSZ_GPY_rsM:</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(813, 1,175)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:42:43 AM">you see "altdeutsche flagge"</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(824, 1,184)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@JaWarumDennNicht"><span>JaWarumDennNicht</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:42:48 AM">ye</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:43:00 AM">altdeutsche &gt; neudeutsche</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(813, 1,175)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:43:04 AM">dump</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:43:23 AM">i am talking to you</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:43:42 AM">and you are doing this shit</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(815, 1,168)</span></a></div>
+                            <div class="timestamp">Today, 11:43:56 AM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:43:56 AM">are you nazis or something like that to do things like that or what=</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:44:37 AM">read rules</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:45:20 AM">Do not make accounts solely to grief We welcome griefing to make space for new art and reinforce what made Place great in the first place. However, if you are not going to contribute anything other than trashing art, then you're not welcome here.</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:45:24 AM">the rule</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:45:42 AM">so long you dont do any "Hakenkreuze its ok"</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:45:51 AM">do what you want</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:46:04 AM">its your porblem if you get banned</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(804, 1,175)</span></a></div>
+                            <div class="timestamp">Today, 11:50:16 AM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@maik_angelikaistgeil"><span>maik_angelikaistgeil</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:50:16 AM">na</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(814, 1,186)</span></a></div>
+                            <div class="timestamp">Today, 11:54:33 AM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@maik_angelikaistgeil"><span>maik_angelikaistgeil</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 11:54:33 AM">kaka</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(815, 1,178)</span></a></div>
+                            <div class="timestamp">Today, 12:35:45 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@007Ben"><span>007Ben</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:35:45 PM">@nagisalul they'll ban your for alting. it's a catch-22</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,948, 9)</span></a></div>
+                            <div class="timestamp">Today, 12:39:27 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@007Ben"><span>007Ben</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:39:27 PM">making extra or alternate accounts</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:39:49 PM">alting is seen as evading a ban and is punishable by guess what? another ban</div>
+                                </div>
+                            </div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:40:00 PM">who tf hasn't heard of alting?</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,957, 40)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:40:10 PM">ben, can i help you with the with the border?</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,993, 43)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@007Ben"><span>007Ben</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 12:40:29 PM">go for it</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,957, 13)</span></a></div>
+                            <div class="timestamp">Today, 1:04:25 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 1:04:25 PM">Dont think we are griefing... we are doin place for our (Jackybruder and Mcfedev) art</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,749, 1,776)</span></a></div>
+                            <div class="timestamp">Today, 1:10:59 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 1:10:59 PM">yes we can help</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(450, 1,758)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 1:11:43 PM">and where at the bottom?</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(455, 1,782)</span></a></div>
+                            <div class="timestamp">Today, 1:32:08 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@mcfedev"><span>mcfedev</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 1:32:08 PM">Is there any possible way to reduce the time to set the next pixel?</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,782, 1,720)</span></a></div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@007Ben"><span>007Ben</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 1:34:37 PM">No. As a matter of fact, the timer used to be 5 minutes in the OG Place</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,236, 1,133)</span></a></div>
+                            <div class="timestamp">Today, 2:00:28 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@Organical"><span>Organical</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 2:00:28 PM">Get over it retard</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(161, 1,404)</span></a></div>
+                            <div class="timestamp">Today, 2:28:52 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@ShrekBoi"><span>ShrekBoi</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 2:28:52 PM">hello, organical</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,723, 767)</span></a></div>
+                            <div class="timestamp">Today, 3:10:27 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@AnotherFlareon"><span>AnotherFlareon</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 3:10:27 PM">now with a face</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(226, 186)</span></a></div>
+                            <div class="timestamp">Today, 3:37:32 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username deleted-account"><span>Deleted account</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 3:37:32 PM">Drawing sans on bottom right corner </div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,991, 1,993)</span></a></div>
+                            <div class="timestamp">Today, 7:44:31 PM</div>
+                            <div class="message-ctn incoming">
+                                <div class="username-ctn"><a class="username" href="/@edovon"><span>edovon</span></a></div>
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 7:44:31 PM">can anyone help with the hammer can sickle im doing </div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(1,497, 166)</span></a></div>
+                            <div class="timestamp">Today, 7:53:03 PM</div>
+                            <div class="message-ctn outgoing">
+                                <div class="clearfix">
+                                    <div class="message" title="11/1/2019, 7:53:03 PM">and... it is broken</div>
+                                </div><a class="chat-coordinates" href="javascript:void(0);"><i class="fa fa-map-marker"></i> <span>(920, 122)</span></a></div>
+                        </div>
+                        <div class="text-field">
+                            <input id="chat-input-field" type="text" maxlength="249" autocomplete="off" placeholder="Send a message" tabindex="-1" disabled="disabled"><a class="send-btn" id="chat-send-btn" href="javascript:void(0)">Send</a></div>
+                    </div>
+                    <div class="tab-content" id="leaderboardTab" data-tab-name="leaderboard">
+                        <div class="top-place"><i class="fa fa-trophy big-icon"></i><span class="info">Leader</span>
+                            <div class="leader-info"><a class="name" href="/@acinonyx">acinonyx</a><span class="pixel-label">Pixels placed</span>
+                                <div class="subdetails row-fluid clearfix">
+                                    <div class="col-xs-6"><span class="value">4,943</span><span class="name">This week</span></div>
+                                    <div class="col-xs-6"><span class="value">512,766</span><span class="name">Total</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/@Organical">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">2.</td>
+                                            <td><a href="/@Organical">Organical</a></td>
+                                            <td class="stat"><span>3,673</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>227,636</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@BuzzDarko">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">3.</td>
+                                            <td><a href="/@BuzzDarko">BuzzDarko</a></td>
+                                            <td class="stat"><span>2,475</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>51,406</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@NickG">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">4.</td>
+                                            <td><a href="/@NickG">NickG</a></td>
+                                            <td class="stat"><span>1,912</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>263,707</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Zalameda">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">5.</td>
+                                            <td><a href="/@Zalameda">Zalameda</a></td>
+                                            <td class="stat"><span>1,688</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>96,480</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Jackybruder">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">6.</td>
+                                            <td><a href="/@Jackybruder">Jackybruder</a></td>
+                                            <td class="stat"><span>1,674</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>1,762</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@panda">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">7.</td>
+                                            <td><a href="/@panda">panda</a></td>
+                                            <td class="stat"><span>1,344</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>7,925</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@mcfedev">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">8.</td>
+                                            <td><a href="/@mcfedev">mcfedev</a></td>
+                                            <td class="stat"><span>1,171</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>1,444</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@007Ben">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">9.</td>
+                                            <td><a href="/@007Ben">007Ben</a></td>
+                                            <td class="stat"><span>920</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>65,095</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Anegasaki">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">10.</td>
+                                            <td><a href="/@Anegasaki">Anegasaki</a></td>
+                                            <td class="stat"><span>917</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>44,035</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@UkiPower">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">11.</td>
+                                            <td><a href="/@UkiPower">UkiPower</a></td>
+                                            <td class="stat"><span>743</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>762</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Arapocalypse">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">12.</td>
+                                            <td><a href="/@Arapocalypse">Arapocalypse</a></td>
+                                            <td class="stat"><span>740</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>254,908</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@V_I_C">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">13.</td>
+                                            <td><a href="/@V_I_C">V_I_C</a></td>
+                                            <td class="stat"><span>673</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>710</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@hurbmoment">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">14.</td>
+                                            <td><a href="/@hurbmoment">hurbmoment</a></td>
+                                            <td class="stat"><span>525</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>1,651</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@ForgetfulCarnlin">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">15.</td>
+                                            <td><a href="/@ForgetfulCarnlin">ForgetfulCarnlin</a></td>
+                                            <td class="stat"><span>465</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>12,753</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Embryo_Yall">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">16.</td>
+                                            <td><a href="/@Embryo_Yall">Embryo_Yall</a></td>
+                                            <td class="stat"><span>449</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>39,281</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@GitNuked">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">17.</td>
+                                            <td><a href="/@GitNuked">GitNuked</a></td>
+                                            <td class="stat"><span>423</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>33,147</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Oh_Tassos">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">18.</td>
+                                            <td><a href="/@Oh_Tassos">Oh_Tassos</a></td>
+                                            <td class="stat"><span>299</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>847</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Ac1d">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">19.</td>
+                                            <td><a href="/@Ac1d">Ac1d</a></td>
+                                            <td class="stat"><span>278</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>362</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@d20diceman">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">20.</td>
+                                            <td><a href="/@d20diceman">d20diceman</a></td>
+                                            <td class="stat"><span>260</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>70,079</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@isac0707">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">21.</td>
+                                            <td><a href="/@isac0707">isac0707</a></td>
+                                            <td class="stat"><span>260</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>328</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@PerryPerry03">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">22.</td>
+                                            <td><a href="/@PerryPerry03">PerryPerry03</a></td>
+                                            <td class="stat"><span>233</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>22,118</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Frank312">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">23.</td>
+                                            <td><a href="/@Frank312">Frank312</a></td>
+                                            <td class="stat"><span>229</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>871</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@Wyttie">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">24.</td>
+                                            <td><a href="/@Wyttie">Wyttie</a></td>
+                                            <td class="stat"><span>202</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>327</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a>
+                        <a href="/@wargwarn">
+                            <div class="user compact">
+                                <table class="table table-contained">
+                                    <tbody>
+                                        <tr>
+                                            <td class="bold">25.</td>
+                                            <td><a href="/@wargwarn">wargwarn</a></td>
+                                            <td class="stat"><span>183</span><span class="row-label">This week</span></td>
+                                            <td class="stat"><span>188</span><span class="row-label">Total</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </a><small class="last-update">Last updated at 11/1/2019, 7:57:28 PM.</small>
+                        <p class="text-muted">Leaderboards are calculated based on the number of pixels you have placed (that someone else hasn't overwritten) over the span of the last week. To get a spot on the leaderboard, start placing!</p>
+                    </div>
+                    <div class="tab-content" id="achievementsTab" data-tab-name="achievements">
+                        <div class="coming-soon">
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="activeUsersTab" data-tab-name="active-users">
+                        <div>
+                            <div class="user">
+                                <div class="user-info"><a class="username" href="/@edovon">edovon</a>
+                                    <div class="rank-container"></div><span class="last-seen">Last seen <strong><time datetime="1572663494588" title="11/1/2019, 7:58:14 PM">3 minutes ago</time></strong></span></div>
+                            </div>
+                            <div class="user">
+                                <div class="user-info"><a class="username" href="/@vortetty">vortetty</a>
+                                    <div class="rank-container"></div><span class="last-seen">Last seen <strong><time datetime="1572663403675" title="11/1/2019, 7:56:43 PM">4 minutes ago</time></strong></span></div>
+                            </div>
+                        </div>
+                        <p class="text-muted">Users that are both logged in and have either placed a pixel or sent a chat message in the last five minutes will appear here. This tab is updated once a minute, so data may appear delayed.</p>
+                    </div>
+                </div>
+                <div class="tabbar">
+                    <div class="tab active" data-tab-name="chat" title="Chat"><i class="fa fa-comments"></i></div>
+                    <div class="tab" data-tab-name="leaderboard" title="Leaderboard"><i class="fa fa-trophy"></i></div>
+                    <div class="tab" data-tab-name="achievements" title="Achievements"><i class="fa fa-star"></i></div>
+                    <div class="tab" data-tab-name="active-users" title="Active Users"><i class="fa fa-users"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-ctn">
+            <div class="dialog-overlay"></div>
+            <div class="dialog dialog-md" id="beta-dialog">
+                <div class="close">×</div>
+                <div class="pages">
+                    <div class="active" tab-name="enroll">
+                        <div class="heading no-margin"><span class="site">canvas.place</span>
+                            <h1>Join the Beta Program</h1>
+                            <p class="subhead">Live on the bleeding edge, and help us test features before they go live.</p>
+                        </div>
+                        <div class="content">
+                            <p>Want to help us test features and get early access to them? Join the beta program and receive new features before everyone else does. We'll give you access to our latest feature set, and all you have to do is provide feedback so that we can make sure these features are great before releasing them to everyone.</p>
+                            <button class="btn btn-lg btn-success" id="signup">Sign up</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-footer align-end"><a class="btn btn-popping" data-dialog-dismiss="">Close</a></div>
+            </div>
+        </div>
+        <div class="dialog-ctn">
+            <div class="dialog-overlay"></div>
+            <div class="dialog" id="changelog-dialog">
+                <div class="close">×</div>
+                <div class="pages">
+                    <div class="active" tab-name="What's new">
+                        <div class="heading no-margin"><span class="site">canvas.place</span>
+                            <h1>What's New</h1></div>
+                        <div id="changelog-content" class="needs-margin">There's no changelog to show.</div>
+                    </div>
+                </div>
+                <div class="dialog-footer align-end"><small><a id="changelog-opt-out" href="javascript:void(0)" data-dialog-dismiss="">Don't show again</a></small>&nbsp;&nbsp;&nbsp;<a class="btn btn-popping" data-dialog-dismiss="">Close</a></div>
+            </div>
+        </div>
+        <div class="dialog-ctn">
+            <div class="dialog-overlay"></div>
+            <div class="dialog" id="help-dialog">
+                <div class="close">×</div>
+                <div class="pages">
+                    <div class="active" tab-name="help">
+                        <div class="heading no-margin"><span class="site">canvas.place</span>
+                            <h1>Get Help</h1>
+                            <p class="subhead">Help using canvas.place.</p>
+                        </div>
+                        <div class="content">
+                            <h3>Getting an account</h3>
+                            <p>You can sign in or create a canvas.place account by clicking Get Started in the top navigation bar. Once you do this, you can enter your current account details or create a new one. We also allow authentication through various third-party services, if you would prefer that.</p>
+                            <h3>Placing pixels</h3>
+                            <p>Placing pixels is easy. Pan over to the area you want to place the pixel, zoom in, select your colour by clicking on it in the palette, and click where you want to place it.</p>
+                            <h3>Keyboard Controls</h3>
+                            <p>You can use the following keyboard controls on canvas.place:</p>
+                            <ul>
+                                <li><kbd>G</kbd>: Toggle grid.</li>
+                                <li><kbd>Space</kbd>: Toggle zoom in/out.</li>
+                                <li><kbd>Esc</kbd>: Exit colour picker, exit dialog, deselect current colour.</li>
+                                <li><kbd>P</kbd>: Select the current colour under your mouse pointer <em>(donors only)</em>.</li>
+                                <li><kbd>▲ / W</kbd>: Pan upward</li>
+                                <li><kbd>▼ / S</kbd>: Pan downward</li>
+                                <li><kbd>◀ / A</kbd>: Pan to the left</li>
+                                <li><kbd>▶ / D</kbd>: Pan to the right</li>
+                            </ul>
+                            <h3>Other topics</h3>
+                            <p>If you need help with anything else, please <a href="https://discord.gg/CgC8FTg">join our Discord here</a> so we can help you out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-footer align-end"><a class="btn btn-popping" data-dialog-dismiss="">Close</a></div>
+            </div>
+        </div>
+    </main>
+    <div id="cookies-eu-banner" style="display: none;">
+        <h4>Cookies on canvas.place</h4>
+        <p>By continuing your use of this service, you accept the use of cookies by Google Analytics to record generalized visit statistics. <a id="cookies-eu-more" href="/privacy" style="display: inline">Learn more »</a></p>
+        <btn class="btn btn-success" id="cookies-eu-accept">Accept</btn>
+        <btn class="btn btn-danger" id="cookies-eu-reject">Reject</btn>
+    </div>
+    <footer class="footer">
+        <div class="container footer-contents">
+            <div>
+                <p class="text-muted">© Dynastic Development</p>
+            </div>
+            <div class="right">
+                <p></p>
+                <ul class="footer-links">
+                    <li><a href="/tos">Terms of Service</a></li>
+                    <li><a href="/guidelines">Rules</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+                <p></p>
+            </div>
+        </div>
+    </footer>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://cdn.ravenjs.com/3.25.2/raven.min.js" crossorigin="anonymous"></script>
+    <script>
+        Raven.config('https://d067712e632c4c36a3ab1ffe4b540833@sentry.io/183264').install();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js?v=10"></script>
+    <script src="https://canvas.place/js/cookies-eu-banner.min.js?v=10"></script>
+    <script src="https://canvas.place/js/build/site.js?v=10"></script>
+    <script src="https://canvas.place/js/d-info.js?v=10"></script>
+    <script src="https://cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js?v=10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js?v=10"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.min.js?v=10"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js?v=10"></script>
+    <script src="https://unpkg.com/eventemitter3@latest/umd/eventemitter3.min.js?v=10"></script>
+    <script src="https://canvas.place/js/build/socket.js?v=10"></script>
+    <script src="https://canvas.place/js/build/popout.js?v=10"></script>
+    <script src="https://raw.githubusercontent.com/Vortetty/Vortetty.github.io/master/js/breakcanvasplace.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/rmm5t/jquery-timeago@180864a9c544a49e43719b457250af216d5e4c3a/jquery.timeago.js?v=10"></script>
+    <script>
+        new CookiesEuBanner(() => {
+            (function(i, s, o, g, r, a, m) {
+                i["GoogleAnalyticsObject"] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+
+            ga("create", "UA-73780083-10", "auto");
+            ga("send", "pageview");
+        });
+    </script>
+</body>
+
+</html>
