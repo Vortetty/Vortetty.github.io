@@ -7,7 +7,7 @@ will be used to host games people want, if you want a game added, i can try to a
  
  
  
-## license:
+## License:
 
 Copyright (c) 2019 by Vortetty
 
